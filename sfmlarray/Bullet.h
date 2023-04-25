@@ -14,6 +14,7 @@ public:
 	void update();
 	void draw(sf::RenderWindow& t_window);
 	bool active{ false };
+	bool collision(sf::FloatRect t_rect);
 private:
 	sf::CircleShape m_circle;	// circle
 	sf::Vector2f m_velocity; // velocity

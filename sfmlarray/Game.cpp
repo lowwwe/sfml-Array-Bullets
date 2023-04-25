@@ -22,6 +22,7 @@ Game::Game() :
 {
 	setupFontAndText(); // load font 
 	setupSprite(); // load texture
+	setupTarget();
 }
 
 /// <summary>
@@ -124,6 +125,14 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_bullets[i].update();
 	}
+	for (int i = 0; i < MAX_BULLETS; i++)
+	{
+		if (m_bullets[i].collision(m_targetFloat))
+		{
+			//m_bullets[i].active = false;
+			std::cout << "hit for " << i << std::endl;
+		}
+	}
 }
 
 /// <summary>
@@ -143,6 +152,14 @@ void Game::render()
 		}
 	}
 	m_window.display();
+}
+
+void Game::setupTarget()
+{
+	m_targetFloat.left = 700.0f;
+	m_targetFloat.top = 500.0f;
+	m_targetFloat.width = 100.0f;
+	m_targetFloat.height = 100.0f;
 }
 
 /// <summary>

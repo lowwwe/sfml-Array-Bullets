@@ -23,14 +23,16 @@ public:
 	void run();
 	
 private:
-
+	sf::FloatRect m_targetFloat;
+	sf::IntRect m_targetInt;
 	void processEvents();
 	void processKeys(sf::Event t_event);
 	void processMouseClick(sf::Event t_event);
 
 	void update(sf::Time t_deltaTime);
 	void render();
-	
+	void setupTarget();
+
 	void setupFontAndText();
 	void setupSprite();
 	int findNextBullet();

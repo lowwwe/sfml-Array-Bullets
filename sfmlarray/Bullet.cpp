@@ -42,3 +42,16 @@ void Bullet::draw(sf::RenderWindow& t_window)
 {
 	t_window.draw(m_circle);
 }
+
+bool Bullet::collision(sf::FloatRect t_rect)
+{
+	if (active)
+	{
+		//if (t_rect.intersects(m_circle.getGlobalBounds()))
+		if (t_rect.contains(m_circle.getPosition()))
+		{
+			return true;
+		}
+	}
+	return false;
+}
