@@ -47,12 +47,17 @@ void Bullet::update()
 		{
 			active = false;
 		}
+
+		
 	}
 }
 
 void Bullet::draw(sf::RenderWindow& t_window)
 {
-	t_window.draw(m_circle);
+	if (active)
+	{
+		t_window.draw(m_circle);
+	}
 }
 
 bool Bullet::collision(sf::FloatRect t_rect)
