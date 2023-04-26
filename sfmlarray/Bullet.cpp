@@ -30,17 +30,21 @@ void Bullet::update()
 {
 	if (active)
 	{
-		m_circle.move(m_velocity);
+		
 		if (m_circle.getPosition().x > 800.0f)
 		{
 			active = false;
 		}
+		m_circle.move(m_velocity);
 	}
 }
 
 void Bullet::draw(sf::RenderWindow& t_window)
 {
-	t_window.draw(m_circle);
+	if (active)
+	{
+		t_window.draw(m_circle);
+	}
 }
 
 bool Bullet::collision(sf::FloatRect t_rect)

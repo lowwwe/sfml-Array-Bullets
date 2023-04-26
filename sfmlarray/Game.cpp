@@ -146,10 +146,7 @@ void Game::render()
 	m_window.draw(m_logoSprite);
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
-		if (m_bullets[i].active)
-		{
-			m_bullets[i].draw(m_window);
-		}
+		m_bullets[i].draw(m_window);
 	}
 	m_window.display();
 }
@@ -172,7 +169,7 @@ void Game::setupFontAndText()
 		std::cout << "problem loading arial black font" << std::endl;
 	}
 	m_welcomeMessage.setFont(m_ArialBlackfont);
-	m_welcomeMessage.setString("SFML Game");
+	m_welcomeMessage.setString("Right");
 	m_welcomeMessage.setStyle(sf::Text::Underlined | sf::Text::Italic | sf::Text::Bold);
 	m_welcomeMessage.setPosition(40.0f, 40.0f);
 	m_welcomeMessage.setCharacterSize(80U);
