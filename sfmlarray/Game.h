@@ -8,6 +8,7 @@
 /// include guards used so we don't process this file twice
 /// same as #pragma once
 /// Don't forget the endif at the bottom
+/// new comment
 /// </summary>
 #include <SFML/Graphics.hpp>
 #include "Bullet.h"
