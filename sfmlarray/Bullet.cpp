@@ -30,12 +30,25 @@ void Bullet::update()
 {
 	if (active)
 	{
-		
+		m_circle.move(m_velocity);
 		if (m_circle.getPosition().x > 800.0f)
 		{
 			active = false;
 		}
-		m_circle.move(m_velocity);
+		if (m_circle.getPosition().y > 600.0f)
+		{
+			active = false;
+		}
+		if (m_circle.getPosition().x < 0.0f)
+		{
+			active = false;
+		}
+		if (m_circle.getPosition().y < 0.0f)
+		{
+			active = false;
+		}
+
+		
 	}
 }
 

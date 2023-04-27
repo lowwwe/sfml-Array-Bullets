@@ -169,7 +169,11 @@ void Game::setupFontAndText()
 		std::cout << "problem loading arial black font" << std::endl;
 	}
 	m_welcomeMessage.setFont(m_ArialBlackfont);
+
+	//m_welcomeMessage.setString("Left");
+
 	m_welcomeMessage.setString("Right");
+
 	m_welcomeMessage.setStyle(sf::Text::Underlined | sf::Text::Italic | sf::Text::Bold);
 	m_welcomeMessage.setPosition(40.0f, 40.0f);
 	m_welcomeMessage.setCharacterSize(80U);
